@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Card, Tag } from 'antd';
 
@@ -6,10 +6,7 @@ const { Meta } = Card;
 
 
 
-export const SinglePost = ( {image , title , owner, ownerpicture,tags} ) =>{
-
-
-  console.log(tags)
+export const SinglePost = ( {image , title , owner, ownerpicture, tags} ) =>{
   
   return(
     <div className="card">

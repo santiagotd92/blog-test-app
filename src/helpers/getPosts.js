@@ -6,7 +6,7 @@ export const getPosts = async () => {
 
     const posts = data;
 
-    
+    /* console.log(posts.data.id) */
   
      /* const posts = data.map((img) => ({
       id: img.id,
