@@ -23,7 +23,7 @@ export const PostGrid = () => {
     <>
       <div className="card-grid">PostGrid
       {blogPosts.data && (blogPosts.data).map((post) => (
-        <SinglePost image={JSON.stringify(post.image)} /* title={post.text} owner={post.owner.firstName} */ />
+        <SinglePost key={post.id} image={post.image}  title={post.text} owner={(post.owner.firstName+' '+post.owner.lastName)} ownerpicture={post.owner.picture} tags={post.tags} />
       ))}
       </div>
     </>

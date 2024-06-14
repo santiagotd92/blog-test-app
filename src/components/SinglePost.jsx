@@ -1,13 +1,15 @@
 import React from 'react';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+import { Avatar, Card, Tag } from 'antd';
 
 const { Meta } = Card;
 
 
 
-export const SinglePost = (image) =>{
-  const imageUrl = image.image.replace(/['"]+/g, '');
+export const SinglePost = ( {image , title , owner, ownerpicture,tags} ) =>{
+
+
+  console.log(tags)
   
   return(
     <div className="card">
@@ -15,8 +17,8 @@ export const SinglePost = (image) =>{
     style={{ width: 300 }}
     cover={
       <img
-        alt="example"
-        src={imageUrl}
+        alt={title}
+        src={image}
       />
     }
     actions={[
@@ -26,10 +28,15 @@ export const SinglePost = (image) =>{
     ]}
   >
     <Meta
-      avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />}
-      title="{title}"
-      description="{owner}"
+      avatar={<Avatar src={ownerpicture} />}
+      title={title}
+      description={owner}
     />
+    <div style={{marginTop:'30px'}}>
+    {tags.map((tag) => (
+        <Tag>{tag}</Tag>
+      ))}
+      </div>
   </Card>
   </div>
   )
